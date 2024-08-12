@@ -59,7 +59,7 @@ Acknowledgements:
 - scikit-learn
 - XGBoost
 - Yahoo Finance API
-- CoinGecko API
+- CoinGecko API (Temporarily unavailable)
 
 Have fun! 🚀
 
