@@ -4,7 +4,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 
-Cryptocurrency Analysis and Forecasting Bot
+CoinInsightBot 
 
 Welcome to the Cryptocurrency Analysis and Forecasting Bot, a project created by Dmytro Nozhenko. This bot is designed to help you analyze and forecast cryptocurrency prices using advanced machine learning models and technical indicators. The bot supports various popular cryptocurrencies and allows you to interactively select and analyze them through a Telegram interface.
 
@@ -18,8 +18,8 @@ Features
 
 Setup and Installation
     Clone the repository:
-    git clone https://github.com/ost-dmitriy/crypto-analysis-bot.git
-    cd crypto-analysis-bot
+    git clone https://github.com/ost-dmitriy/CoinInsightBot.git
+    cd CoinInsightBot
 
 Install required libraries:
     pip install -r requirements.txt
