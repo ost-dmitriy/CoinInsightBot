@@ -6,7 +6,7 @@ This bot is not financial advice. The analysis and predictions provided by this 
 
 CoinInsightBot 
 
-Welcome to the Cryptocurrency Analysis and Forecasting Bot, a project created by Dmytro Nozhenko. This bot is designed to help you analyze and forecast cryptocurrency prices using advanced machine learning models and technical indicators. The bot supports various popular cryptocurrencies and allows you to interactively select and analyze them through a Telegram interface.
+Welcome to the CoinInsightBot, a project created by Dmytro Nozhenko. This bot is designed to help you analyze and forecast cryptocurrency prices using advanced machine learning models and technical indicators. The bot supports various popular cryptocurrencies and allows you to interactively select and analyze them through a Telegram interface.
 
 Features
 - Cryptocurrency Analysis: Get detailed technical analysis of popular cryptocurrencies, including Bitcoin (BTC), Ethereum (ETH), Cardano (ADA), and more.
