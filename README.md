@@ -68,6 +68,7 @@ I want to extend my heartfelt thanks to everyone who uses, contributes to, or im
 
 If you find this project useful and would like to support its development, consider leaving a tip. Your generosity will help me continue maintaining and improving the project.
 
-💸 Tip Me
+💸 Tip Me:
 Bitcoin (BTC): 13kDUy1n8baK5NnG9YsQhTvxxU6na6nKKy
+
 Tether (TRC20): TLHbRK8HjJvF72xyhqFUsYKp21RKdEYGjN
