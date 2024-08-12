@@ -18,17 +18,21 @@ Features
 
 Setup and Installation
 - Clone the repository:
-- git clone https://github.com/ost-dmitriy/CoinInsightBot.git
-- cd CoinInsightBot
+
+```git clone https://github.com/ost-dmitriy/CoinInsightBot.git```
+
+```cd CoinInsightBot```
 
 Install required libraries:
-- pip install -r requirements.txt
+
+```pip install -r requirements.txt```
 
 Set up your Telegram bot:
 - Obtain a Telegram bot token from BotFather and replace the TOKEN variable in the script with your token.
 
 Run the bot:
-- python main.py
+
+```python main.py```
 
 Usage
 - Start the Bot
