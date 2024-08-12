@@ -21,7 +21,7 @@ from joblib import dump, load
 from sklearn.preprocessing import MinMaxScaler
 
 # Token
-TOKEN = 'Your Telegram Token'
+TOKEN = '6379583643:AAE5p5V4pchri202_jYPczceolP6BrmJ31I'
 
 # Crypto list
 cryptos = ['BTC-USD', 'ETH-USD', 'ARB11841-USD', 'ADA-USD', 'SOL-USD', 'DOGE-USD', 'SHIB-USD', 'XRP-USD', 'DOT-USD', 'MATIC-USD', ]
@@ -39,10 +39,8 @@ ticker_to_coingecko_id = {
     'DOT-USD': 'Polkadot',
     'MATIC-USD': 'Polygon',
 
-      
-      
-        # 
-    # Extra ?
+         
+    # Extra 
 }
 
 
@@ -72,8 +70,6 @@ def load_models():
         pass
     
     return lstm_model, xgb_model, gb_model
-
-
 
 def fetch_data(crypto):
     data = yf.download(crypto, period='1y')
@@ -170,7 +166,7 @@ def forecast_with_sarima(data):
     conf_int = forecast.conf_int()
     return forecast_series, conf_int
 
-def plot_crypto_data(data, lstm_preds, xgb_preds, gb_preds, sarima_forecast=None, confidence_interval=None, title=''):
+def plot_crypto_data(data, lstm_preds, xgb_preds, gb_preds, y_test, sarima_forecast=None, confidence_interval=None, title=''):
     fig, axes = plt.subplots(6, 1, figsize=(14, 25), sharex=True)
     fig.suptitle(title, fontsize=16)
 
@@ -207,11 +203,6 @@ def plot_crypto_data(data, lstm_preds, xgb_preds, gb_preds, sarima_forecast=None
     axes[3].plot(data.index[-len(lstm_preds):], lstm_preds, label='LSTM Predictions', color='purple', linestyle='--', linewidth=2)
     axes[3].plot(data.index[-len(xgb_preds):], xgb_preds, label='XGBoost Predictions', color='green', linestyle='-.', linewidth=2)  
 
-    
-
-
-    
-    
 
     if sarima_forecast is not None:
         forecast_index = pd.date_range(start=data.index[-1], periods=len(sarima_forecast)+1, inclusive='right')[1:]
@@ -243,17 +234,11 @@ def plot_crypto_data(data, lstm_preds, xgb_preds, gb_preds, sarima_forecast=None
     plt.savefig('crypto_analysis.png', format='png')
 
 
-
-
-
-
 periods = {
     '3 Months': '3mo',
     '6 Months': '6mo',
     '1 Year': '1y'
 }
-
-
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_first_name = update.effective_user.first_name
@@ -320,9 +305,9 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         sarima_forecast, sarima_conf_int = forecast_with_sarima(data)
 
-        plot_crypto_data(data, lstm_preds=lstm_predictions, xgb_preds=xgb_predictions, gb_preds=gb_predictions, 
-                         sarima_forecast=sarima_forecast, confidence_interval=sarima_conf_int, 
-                         title=f'{crypto_ticker} Technical Analysis and Forecast ({callback_data})')
+        plot_crypto_data(data, lstm_preds=lstm_predictions, xgb_preds=xgb_predictions, gb_preds=gb_predictions, y_test=y_test, 
+                     sarima_forecast=sarima_forecast, confidence_interval=sarima_conf_int, 
+                     title=f'{crypto_ticker} Technical Analysis and Forecast ({callback_data})')
 
         with open('crypto_analysis.png', 'rb') as photo:
             await query.message.reply_photo(photo=photo)
