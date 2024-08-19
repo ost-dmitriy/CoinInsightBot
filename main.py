@@ -21,7 +21,7 @@ from joblib import dump, load
 from sklearn.preprocessing import MinMaxScaler
 
 # Token
-TOKEN = '6379583643:AAE5p5V4pchri202_jYPczceolP6BrmJ31I'
+TOKEN = 'Your Telegram Token'
 
 # Crypto list
 cryptos = ['BTC-USD', 'ETH-USD', 'ARB11841-USD', 'ADA-USD', 'SOL-USD', 'DOGE-USD', 'SHIB-USD', 'XRP-USD', 'DOT-USD', 'MATIC-USD', ]
